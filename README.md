@@ -12,7 +12,12 @@ This project displays a "Happy Birthday" message on an 8x8 matrix, plays a melod
 - **Breadboard** and **Jumper Wires**
 
 ## Libraries to Install
-- **MaxMatrix**: Available on GitHub or through the Arduino Library Manager.
+- **MaxMatrix**: You need to install the MaxMatrix library to work with the 8x8 matrix. Here’s how you can install it:
+  1. Download the MaxMatrix library from GitHub: [MaxMatrix GitHub Repository](https://github.com/AndreasBur/MaxMatrix).
+  2. Extract the downloaded `.zip` file.
+  3. Open the Arduino IDE.
+  4. Go to `Sketch` > `Include Library` > `Add .ZIP Library...`.
+  5. Select the extracted `.zip` file and click `Open`.
 
 ## Wiring Connections
 - **Arduino - MAX7219**
@@ -49,4 +54,3 @@ This project displays a "Happy Birthday" message on an 8x8 matrix, plays a melod
 - **No Display on Matrix**: Check the wiring connections, ensure the MAX7219 driver is properly connected.
 - **No Sound from Buzzer**: Verify the buzzer connection and ensure the pin number is correct in the code.
 - **LEDs Not Working**: Ensure proper resistor placement and check the wiring for each LED.
-
