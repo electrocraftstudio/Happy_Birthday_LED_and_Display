@@ -199,9 +199,9 @@ PROGMEM const unsigned char CH[] = {
 #define NOTE_DS8 4978
 #define REST   0
 
-int tempo = 180; // Tempo hızını artırdım
+int tempo = 180; 
 int buzzer = 11;
-int ledPins[] = {3, 4, 5, 6, 7}; // LED pinleri
+int ledPins[] = {3, 4, 5, 6, 7}; // LED pin
 int numLeds = 5;
 
 int melody[] = {
@@ -221,19 +221,19 @@ int melody[] = {
 int notes = sizeof(melody) / sizeof(melody[0]) / 2;
 int wholenote = (60000 * 4) / tempo;
 int divider = 0, noteDuration = 0;
-int currentLed = 0; // Hangi LED'in yanacağını takip etmek için
+int currentLed = 0; 
 
-char string[] = "Your Word "; //edit text message 
-char string2[] = "Your Word";
+char string[] = "Happy Birthday To Me "; //edit text message 
+char string2[] = "21 :D ";
 
 void setup() {
     pinMode(buzzer, OUTPUT);
     for (int i = 0; i < numLeds; i++) {
         pinMode(ledPins[i], OUTPUT);
-        digitalWrite(ledPins[i], LOW); // Başlangıçta LED'leri kapalı tut
+        digitalWrite(ledPins[i], LOW); 
     }
     m.init();
-    m.setIntensity(4); //change brightness
+    m.setIntensity(4); 
 }
 
 void loop() {
@@ -257,21 +257,20 @@ void loop() {
         // Bir sonraki LED'e geç
         currentLed = (currentLed + 1) % numLeds;
 
-        delay(noteDuration / 2); // Notalar arasında bekleme süresi
-
+        delay(noteDuration / 2); 
         noTone(buzzer);
     }
 
     // 8x8 matris üzerinde metni göster
     m.shiftLeft(false, true);
-    printStringWithShift(string, 50);  // Mesajı göster
+    printStringWithShift(string, 50);  
     delay(1000);
     m.shiftLeft(false, true);
-    printStringWithShift(string2, 50); // İkinci mesajı göster
+    printStringWithShift(string2, 50); 
 
-    // Döngüyü bitir, şarkı bitmeden tekrar etmez
+
     while (true) {
-        delay(1000); // Bu bölümde hiçbir şey yapmadan bekle
+        delay(1000); 
     }
 }
 
